@@ -10,6 +10,7 @@ import DashboardLayout from "./components/layout/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import UserManagement from "./pages/UserManagement";
 import ClientManagement from "./pages/ClientManagement";
+import ClientProfile from "./pages/ClientProfile";
 import AppointmentManagement from "./pages/AppointmentManagement";
 import HRManagement from "./pages/HRManagement";
 import DocumentManagement from "./pages/DocumentManagement";
@@ -58,6 +59,11 @@ const App = () => (
               <Route path="/clients" element={
                 <ProtectedRoute>
                   <ClientManagement />
+                </ProtectedRoute>
+              } />
+              <Route path="/clients/:clientId" element={
+                <ProtectedRoute>
+                  <ClientProfile />
                 </ProtectedRoute>
               } />
               <Route path="/appointments" element={

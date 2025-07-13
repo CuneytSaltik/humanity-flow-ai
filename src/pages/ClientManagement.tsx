@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -387,7 +388,11 @@ const ClientManagement = () => {
             <TableBody>
               {filteredClients.map((client) => (
                 <TableRow key={client.id}>
-                  <TableCell className="font-medium">{client.name}</TableCell>
+                  <TableCell className="font-medium">
+                    <Link to={`/clients/${client.id}`} className="hover:underline">
+                      {client.name}
+                    </Link>
+                  </TableCell>
                   <TableCell>{client.email}</TableCell>
                   <TableCell>{client.phone}</TableCell>
                   <TableCell>
