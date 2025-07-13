@@ -81,6 +81,13 @@ const translations = {
     'clients.assignedTo': 'Atanan Kişi',
     'clients.serviceStartDate': 'Hizmet Başlama Tarihi',
 
+    // Documents
+    'documents.title': 'Belge Yönetimi',
+    'documents.addDocument': 'Belge Ekle',
+    'documents.client': 'Müşteri',
+    'documents.file': 'Dosya',
+    'documents.uploadFile': 'Dosyayı buraya sürükleyin veya tıklayın',
+
     // Appointments
     'appointments.title': 'Randevu Yönetimi',
     'appointments.addAppointment': 'Randevu Ekle',
@@ -180,6 +187,13 @@ const translations = {
     'clients.editClient': 'Kunde bearbeiten',
     'clients.assignedTo': 'Zugewiesen an',
     'clients.serviceStartDate': 'Service-Startdatum',
+
+    // Documents
+    'documents.title': 'Dokumentenverwaltung',
+    'documents.addDocument': 'Dokument hinzufügen',
+    'documents.client': 'Kunde',
+    'documents.file': 'Datei',
+    'documents.uploadFile': 'Datei hierher ziehen oder klicken',
 
     // Appointments
     'appointments.title': 'Terminverwaltung',
