@@ -4,13 +4,11 @@ import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
-  SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarGroupContent,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarTrigger,
-  useSidebar,
 } from '@/components/ui/sidebar';
 import {
   LayoutDashboard,
@@ -21,16 +19,17 @@ import {
   StickyNote,
   Briefcase,
   Activity,
-  MessageSquare,
   Settings,
   LogOut,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useAuth } from '@/contexts/AuthContext';
+import { Skeleton } from '@/components/ui/skeleton';
 
+// Hatanın kaynağı olan, eksik menuItems tanımını buraya ekliyoruz.
 const menuItems = [
   { title: 'nav.dashboard', url: '/dashboard', icon: LayoutDashboard, roles: ['admin', 'manager', 'employee'] },
-  { title: 'nav.adminPanel', url: '/users', icon: Users, roles: ['admin'] },
+  { title: 'nav.users', url: '/users', icon: Users, roles: ['admin'] },
   { title: 'nav.clients', url: '/clients', icon: UserCheck, roles: ['admin', 'manager', 'employee'] },
   { title: 'nav.appointments', url: '/appointments', icon: Calendar, roles: ['admin', 'manager', 'employee'] },
   { title: 'nav.documents', url: '/documents', icon: FileText, roles: ['admin', 'manager', 'employee'] },
@@ -42,21 +41,40 @@ const menuItems = [
 export function AppSidebar() {
   const location = useLocation();
   const { t } = useLanguage();
-  const { userProfile, signOut } = useAuth();
+  const { userProfile, signOut, loading } = useAuth();
   const currentPath = location.pathname;
 
-  const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive ? 'bg-sidebar-accent text-sidebar-accent-foreground font-medium' : 'hover:bg-sidebar-accent/50';
 
-  const filteredItems = menuItems.filter(item => 
-    userProfile?.role && item.roles.includes(userProfile.role)
+  // Profil yüklenirken veya bulunamazsa iskelet (skeleton) göster
+  if (loading || !userProfile) {
+    return (
+      <Sidebar className="w-60">
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupLabel>Social Services Platform</SidebarGroupLabel>
+            <SidebarGroupContent className="p-2">
+              <div className="space-y-2">
+                <Skeleton className="h-8 w-full" />
+                <Skeleton className="h-8 w-full" />
+                <Skeleton className="h-8 w-full" />
+                <Skeleton className="h-8 w-full" />
+              </div>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+    );
+  }
+
+  // Kullanıcının rolüne göre menüleri filtrele
+  const filteredItems = menuItems.filter(item =>
+    userProfile.role && item.roles.includes(userProfile.role)
   );
 
   return (
     <Sidebar className="w-60">
-      <SidebarTrigger className="m-2 self-end" />
-      
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>
@@ -68,7 +86,7 @@ export function AppSidebar() {
               {filteredItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                  <NavLink to={item.url} className={getNavCls}>
+                    <NavLink to={item.url} className={getNavCls({ isActive: location.pathname === item.url })}>
                       <item.icon className="w-4 h-4" />
                       <span>{t(item.title)}</span>
                     </NavLink>
@@ -78,7 +96,7 @@ export function AppSidebar() {
               
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <NavLink to="/settings" className={getNavCls}>
+                  <NavLink to="/settings" className={getNavCls({ isActive: location.pathname === '/settings' })}>
                     <Settings className="w-4 h-4" />
                     <span>{t('nav.settings')}</span>
                   </NavLink>

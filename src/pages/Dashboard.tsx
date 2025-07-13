@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, UserCheck, Calendar, Activity } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -138,23 +139,23 @@ const Dashboard = () => {
             <div className="space-y-2">
               {userProfile?.role === 'admin' && (
                 <>
-                  <div className="p-2 rounded border hover:bg-muted/50 cursor-pointer">
-                    Add New User
-                  </div>
-                  <div className="p-2 rounded border hover:bg-muted/50 cursor-pointer">
-                    View User Management
-                  </div>
+                  <Link to="/users" className="block p-2 rounded border hover:bg-muted/50 cursor-pointer">
+                    {t('users.addUser')}
+                  </Link>
+                  <Link to="/users" className="block p-2 rounded border hover:bg-muted/50 cursor-pointer">
+                    {t('users.title')}
+                  </Link>
                 </>
               )}
-              <div className="p-2 rounded border hover:bg-muted/50 cursor-pointer">
-                Add New Client
-              </div>
-              <div className="p-2 rounded border hover:bg-muted/50 cursor-pointer">
-                Schedule Appointment
-              </div>
-              <div className="p-2 rounded border hover:bg-muted/50 cursor-pointer">
-                Upload Document
-              </div>
+              <Link to="/clients" className="block p-2 rounded border hover:bg-muted/50 cursor-pointer">
+                {t('clients.addClient')}
+              </Link>
+              <Link to="/appointments" className="block p-2 rounded border hover:bg-muted/50 cursor-pointer">
+                {t('appointments.addAppointment')}
+              </Link>
+              <Link to="/documents" className="block p-2 rounded border hover:bg-muted/50 cursor-pointer">
+                {t('documents.addDocument')}
+              </Link>
             </div>
           </CardContent>
         </Card>

@@ -7,10 +7,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node / build çıktıları
 node_modules
 dist
 dist-ssr
+
+# Local ortam dosyaları
 *.local
+.env
+.env.*
+!.env.example
+.env.local
+
+# Docker dosyaları
+Dockerfile
+docker-compose.yml
+docker-compose.yaml
 
 # Editor directories and files
 .vscode/*
