@@ -81,6 +81,11 @@ const translations = {
     'clients.editClient': 'Müşteri Düzenle',
     'clients.assignedTo': 'Atanan Kişi',
     'clients.serviceStartDate': 'Hizmet Başlama Tarihi',
+    'clients.profile': 'Müşteri Profili',
+    'clients.infoTab': 'Bilgi',
+    'clients.documentsTab': 'Belgeler',
+    'clients.appointmentsTab': 'Randevular',
+    'clients.notesTab': 'Notlar',
 
     // Documents
     'documents.title': 'Belge Yönetimi',
@@ -189,6 +194,11 @@ const translations = {
     'clients.editClient': 'Kunde bearbeiten',
     'clients.assignedTo': 'Zugewiesen an',
     'clients.serviceStartDate': 'Service-Startdatum',
+    'clients.profile': 'Kundenprofil',
+    'clients.infoTab': 'Information',
+    'clients.documentsTab': 'Dokumente',
+    'clients.appointmentsTab': 'Termine',
+    'clients.notesTab': 'Notizen',
 
     // Documents
     'documents.title': 'Dokumentenverwaltung',
