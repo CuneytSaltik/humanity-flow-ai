@@ -21,11 +21,16 @@ interface Document {
   clients?: { name: string; assigned_to_user_id: string | null };
 }
 
+interface Client {
+  id: string;
+  name: string;
+}
+
 const DocumentManagement = () => {
   const { t } = useLanguage();
   const { userProfile } = useAuth();
   const [documents, setDocuments] = useState<Document[]>([]);
-  const [clients, setClients] = useState<any[]>([]);
+  const [clients, setClients] = useState<Client[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState({ client_id: '' });
@@ -94,7 +99,7 @@ const DocumentManagement = () => {
       setFormData({ client_id: '' });
       loadDocuments();
     } catch (error: any) {
-      toast({ title: 'Error', description: error.message, variant: 'destructive' });
+      toast({ title: 'Error', description: error.message ?? 'Upload failed', variant: 'destructive' });
     }
   };
 
