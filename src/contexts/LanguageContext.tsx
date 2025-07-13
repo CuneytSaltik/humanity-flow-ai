@@ -13,13 +13,14 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   tr: {
     // Navigation
-    'nav.dashboard': 'Ana Panel',
+    'nav.dashboard': 'Raporlar ve Panel',
+    'nav.adminPanel': 'Yönetim Paneli',
     'nav.users': 'Kullanıcılar',
     'nav.clients': 'Müşteriler',
     'nav.appointments': 'Randevular',
     'nav.documents': 'Belgeler',
     'nav.notes': 'Notlar',
-    'nav.hr': 'İK',
+    'nav.hr': 'Çalışanlar (İK)',
     'nav.activity': 'Aktivite Günlüğü',
     'nav.chat': 'AI Asistan',
     'nav.settings': 'Ayarlar',
@@ -81,6 +82,13 @@ const translations = {
     'clients.assignedTo': 'Atanan Kişi',
     'clients.serviceStartDate': 'Hizmet Başlama Tarihi',
 
+    // Documents
+    'documents.title': 'Belge Yönetimi',
+    'documents.addDocument': 'Belge Ekle',
+    'documents.client': 'Müşteri',
+    'documents.file': 'Dosya',
+    'documents.uploadFile': 'Dosyayı buraya sürükleyin veya tıklayın',
+
     // Appointments
     'appointments.title': 'Randevu Yönetimi',
     'appointments.addAppointment': 'Randevu Ekle',
@@ -113,13 +121,14 @@ const translations = {
   },
   de: {
     // Navigation
-    'nav.dashboard': 'Dashboard',
+    'nav.dashboard': 'Berichte & Dashboard',
+    'nav.adminPanel': 'Admin-Bereich',
     'nav.users': 'Benutzer',
     'nav.clients': 'Kunden',
     'nav.appointments': 'Termine',
     'nav.documents': 'Dokumente',
     'nav.notes': 'Notizen',
-    'nav.hr': 'HR',
+    'nav.hr': 'Mitarbeiter (HR)',
     'nav.activity': 'Aktivitätsprotokoll',
     'nav.chat': 'AI Assistent',
     'nav.settings': 'Einstellungen',
@@ -180,6 +189,13 @@ const translations = {
     'clients.editClient': 'Kunde bearbeiten',
     'clients.assignedTo': 'Zugewiesen an',
     'clients.serviceStartDate': 'Service-Startdatum',
+
+    // Documents
+    'documents.title': 'Dokumentenverwaltung',
+    'documents.addDocument': 'Dokument hinzufügen',
+    'documents.client': 'Kunde',
+    'documents.file': 'Datei',
+    'documents.uploadFile': 'Datei hierher ziehen oder klicken',
 
     // Appointments
     'appointments.title': 'Terminverwaltung',

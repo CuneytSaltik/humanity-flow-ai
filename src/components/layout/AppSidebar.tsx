@@ -30,7 +30,7 @@ import { useAuth } from '@/contexts/AuthContext';
 
 const menuItems = [
   { title: 'nav.dashboard', url: '/dashboard', icon: LayoutDashboard, roles: ['admin', 'manager', 'employee'] },
-  { title: 'nav.users', url: '/users', icon: Users, roles: ['admin'] },
+  { title: 'nav.adminPanel', url: '/users', icon: Users, roles: ['admin'] },
   { title: 'nav.clients', url: '/clients', icon: UserCheck, roles: ['admin', 'manager', 'employee'] },
   { title: 'nav.appointments', url: '/appointments', icon: Calendar, roles: ['admin', 'manager', 'employee'] },
   { title: 'nav.documents', url: '/documents', icon: FileText, roles: ['admin', 'manager', 'employee'] },

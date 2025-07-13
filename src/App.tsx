@@ -12,6 +12,7 @@ import UserManagement from "./pages/UserManagement";
 import ClientManagement from "./pages/ClientManagement";
 import AppointmentManagement from "./pages/AppointmentManagement";
 import HRManagement from "./pages/HRManagement";
+import DocumentManagement from "./pages/DocumentManagement";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -71,7 +72,7 @@ const App = () => (
               } />
               <Route path="/documents" element={
                 <ProtectedRoute>
-                  <div className="p-6">Document Management (Coming Soon)</div>
+                  <DocumentManagement />
                 </ProtectedRoute>
               } />
               <Route path="/notes" element={
