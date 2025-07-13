@@ -98,9 +98,8 @@ const DocumentManagement = () => {
       setFile(null);
       setFormData({ client_id: '' });
       loadDocuments();
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'Upload failed';
-      toast({ title: 'Error', description: message, variant: 'destructive' });
+    } catch (error: any) {
+      toast({ title: 'Error', description: error.message ?? 'Upload failed', variant: 'destructive' });
     }
   };
 
