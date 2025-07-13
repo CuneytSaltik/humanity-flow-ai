@@ -13,13 +13,14 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   tr: {
     // Navigation
-    'nav.dashboard': 'Ana Panel',
+    'nav.dashboard': 'Raporlar ve Panel',
+    'nav.adminPanel': 'Yönetim Paneli',
     'nav.users': 'Kullanıcılar',
     'nav.clients': 'Müşteriler',
     'nav.appointments': 'Randevular',
     'nav.documents': 'Belgeler',
     'nav.notes': 'Notlar',
-    'nav.hr': 'İK',
+    'nav.hr': 'Çalışanlar (İK)',
     'nav.activity': 'Aktivite Günlüğü',
     'nav.chat': 'AI Asistan',
     'nav.settings': 'Ayarlar',
@@ -120,13 +121,14 @@ const translations = {
   },
   de: {
     // Navigation
-    'nav.dashboard': 'Dashboard',
+    'nav.dashboard': 'Berichte & Dashboard',
+    'nav.adminPanel': 'Admin-Bereich',
     'nav.users': 'Benutzer',
     'nav.clients': 'Kunden',
     'nav.appointments': 'Termine',
     'nav.documents': 'Dokumente',
     'nav.notes': 'Notizen',
-    'nav.hr': 'HR',
+    'nav.hr': 'Mitarbeiter (HR)',
     'nav.activity': 'Aktivitätsprotokoll',
     'nav.chat': 'AI Assistent',
     'nav.settings': 'Einstellungen',
